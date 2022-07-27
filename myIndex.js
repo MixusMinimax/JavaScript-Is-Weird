@@ -6,7 +6,7 @@ function convertNumber(number) {
 const chars = {}
 
 function convertString(str) {
-    return str.split('').map(c => chars[c]).join('+ ')
+    return str.split('').map(c => chars[c] || (() => {throw new Error(c)})()).join('+ ')
 }
 
 chars.a = `(![]+[])[${convertNumber(1)}]`
@@ -16,24 +16,14 @@ chars.d = `((/!/)[-!![]]+[])[${convertNumber(2)}]`
 chars.e = `(!![]+[])[${convertNumber(3)}]`
 chars.f = `(![]+[])[${convertNumber(0)}]`
 chars.i = `((/!/)[-!![]]+[])[${convertNumber(5)}]`
-chars.j = `(({})+[])[${convertNumber(3)}]`
-chars.l = `(![]+[])[${convertNumber(2)}]`
 chars.n = `((/!/)[-!![]]+[])[${convertNumber(1)}]`
-chars.N = `(+{}+[])[${convertNumber(0)}]`
 chars.o = `(({})+[])[${convertNumber(1)}]`
-chars.O = `(({})+[])[${convertNumber(8)}]`
 chars.r = `(!![]+[])[${convertNumber(1)}]`
 chars.s = `(![]+[])[${convertNumber(3)}]`
 chars.t = `(!![]+[])[${convertNumber(0)}]`
 chars.u = `(!![]+[])[${convertNumber(2)}]`
-chars['['] = `(({})+[])[${convertNumber(0)}]`
 chars[' '] = `(({})+[])[${convertNumber(7)}]`
-chars[']'] = `(({})+[])[${convertNumber(14)}]`
-chars['/'] = `(/\\\\/+[])[${convertNumber(0)}]`
 chars['\\'] = `(/\\\\/+[])[${convertNumber(1)}]`
-chars['!'] = `(/!/+[])[${convertNumber(1)}]`
-chars['['] = `(/\\[/+[])[${convertNumber(2)}]`
-chars[']'] = `(/]/+[])[${convertNumber(1)}]`
 var objectConstructor = `({})[${convertString('constructor')}]`
 var numberConstructor = `(+[])[${convertString('constructor')}]`
 chars.m = `(${numberConstructor}+[])[${convertNumber(11)}]`
