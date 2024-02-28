@@ -12,11 +12,11 @@ function convertString(str) {
 chars.a = `(![]+[])[${convertNumber(1)}]`
 chars.b = `(({})+[])[${convertNumber(2)}]`
 chars.c = `(({})+[])[${convertNumber(5)}]`
-chars.d = `((/!/)[-!![]]+[])[${convertNumber(2)}]`
+chars.d = `([][+[]]+[])[${convertNumber(2)}]`
 chars.e = `(!![]+[])[${convertNumber(3)}]`
 chars.f = `(![]+[])[${convertNumber(0)}]`
-chars.i = `((/!/)[-!![]]+[])[${convertNumber(5)}]`
-chars.n = `((/!/)[-!![]]+[])[${convertNumber(1)}]`
+chars.i = `([][+[]]+[])[${convertNumber(5)}]`
+chars.n = `([][+[]]+[])[${convertNumber(1)}]`
 chars.o = `(({})+[])[${convertNumber(1)}]`
 chars.r = `(!![]+[])[${convertNumber(1)}]`
 chars.s = `(![]+[])[${convertNumber(3)}]`
