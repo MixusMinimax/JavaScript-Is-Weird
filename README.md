@@ -4,7 +4,7 @@ The original solution creates the `fromCharCode` expression from scratch for eve
 What I do is this:
 1. Store `fromCharCode` in `Object[0]`, which is accessible under `({})['constructor'][0]`.
 2. Compile the code using this shorter pointer.
-3. Prepend `delete Object[0];` to the code
+3. Prepend `delete Object[0];` to the code (I removed this, this was just cleaner but is not really necessary. I just didn't want to leave anything behind, but I do not care anymore.)
 4. Pass that new string to the Function constructor
 5. Execute the code.
 
