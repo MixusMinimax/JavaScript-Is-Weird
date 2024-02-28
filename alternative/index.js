@@ -1,6 +1,6 @@
 function convertNumber(number) {
     if (number === 0) return '+[]'
-    else return Array(number).fill('+!![]').join('+ ')
+    else return Array(number).fill('+!![]').join('')
 }
 
 const chars = {}
