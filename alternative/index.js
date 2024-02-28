@@ -49,7 +49,7 @@ function convertFullString(string) {
 }
 
 function compile(code) {
-    return `(()=>(${functionConstructor}((${convertFullString('delete Object.constructor[0];')})+(${convertFullString(code)}))()))(${setCharCode})`
+    return `(()=>(${functionConstructor}(${convertFullString(code)})()))(${setCharCode})`
 }
 
 console.log(compile('console.log("Hello world!");'))
